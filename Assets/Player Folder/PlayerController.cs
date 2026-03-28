@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Animator animator;
 
     public float moveSpeed;
     public float jumpForce;
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         inputX = Input.GetAxis("Horizontal");
+
+        animator.SetFloat("Speed", Mathf.Abs(inputX));
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
