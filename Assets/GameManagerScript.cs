@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
         float health = playerController.health;
 
-        healthTxt.text = "Score: " + health;
+        healthTxt.text = "Health: " + health;
 
 
     }
