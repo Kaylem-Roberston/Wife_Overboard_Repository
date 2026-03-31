@@ -26,6 +26,13 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(inputX));
 
+        if (Mathf.Abs(inputX) > 0)
+        {
+            float direction = Mathf.Sign(inputX);
+            transform.localScale = new Vector3(direction * 2, 2, 2);
+        }
+        
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         if (isGrounded && Input.GetButtonDown("Jump"))
